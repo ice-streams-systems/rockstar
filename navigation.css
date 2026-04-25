@@ -1,0 +1,112 @@
+/* ── Navigation ── */
+nav {
+    width: 100%;
+    padding: clamp(3px, 0.5vh, 8px) clamp(10px, 2vw, 32px);
+    border-top: 1px solid rgba(193,74,9,0.25);
+    background: rgba(9,9,9,0.6);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: clamp(4px, 0.7vw, 10px);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: clamp(5px, 0.6vh, 9px) clamp(8px, 1.1vw, 20px);
+    background: rgba(30,30,30,0.9);
+    border: 1px solid rgba(193,74,9,0.2);
+    color: #E8E8E8;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(0.6rem, 0.85vw, 0.95rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: background 0.25s ease, border-color 0.25s ease,
+                color 0.25s ease, transform 0.2s ease,
+                box-shadow 0.25s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: #C14A09;
+    border-color: #C14A09;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(193,74,9,0.45);
+}
+
+/* Dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 999999;
+    background: #1A1A1A;
+    border: 1px solid rgba(193,74,9,0.4);
+    border-top: 2px solid #C14A09;
+    border-radius: 0 0 4px 4px;
+    padding: 4px;
+    min-width: max-content;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.7);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin: 2px 0;
+}
+
+.dropdown-menu li a {
+    padding: 7px 16px;
+    font-size: clamp(0.58rem, 0.8vw, 0.88rem);
+    background: transparent;
+    border: none;
+    border-radius: 2px;
+    border-left: 2px solid transparent;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.dropdown-menu li a:hover {
+    background: rgba(193,74,9,0.15);
+    border-left-color: #C14A09;
+    color: #C14A09;
+    transform: translateX(3px) translateY(0);
+    box-shadow: none;
+}
+
+/* ── Dropdown gap bridge ── */
+/* Invisible pseudo-element fills the gap between button and menu
+   so hover state doesn't drop when mouse travels between them */
+.dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 8px; /* matches gap between button and menu */
+}
+
+/* Also keep menu open when hovering the bridge */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+  display: block;
+}

@@ -1,0 +1,43 @@
+/* ── Footer ── */
+footer p { margin: 0; }
+
+#social-networks,
+#legal {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+#social-networks p {
+    margin: 0;
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(0.6rem, 0.85vw, 0.85rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #09A688;
+}
+
+#legal span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.55rem, 0.8vw, 0.82rem);
+    color: rgba(193,74,9,0.7);
+    letter-spacing: 0.03em;
+}
+
+#social-networks a.facebook-icon {
+    display: inline-block;
+    width: clamp(22px, 2vw, 34px);
+    height: clamp(22px, 2vw, 34px);
+    background-color: #E8E8E8;
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>');
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>');
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+#social-networks a.facebook-icon:hover {
+    background-color: #09A688;
+    transform: scale(1.25);
+}
