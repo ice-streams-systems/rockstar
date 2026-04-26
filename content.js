@@ -22,7 +22,7 @@ const contentMap = {
         <div class="homepage-wrap">
           <div class="homepage-intro">
             <h2>Welcome to Rockstar Auto Repair</h2>
-            <p>Quality work, honest pricing, and a passion for every vehicle that comes through the door. Located in downtown Benton Harbor, Michigan — we keep your car road-ready so you can drive with confidence.</p>
+            <p>Quality work, honest pricing, and a passion for every vehicle that comes through the door. Located in downtown Benton Harbor, Michigan - we keep your car road-ready so you can drive with confidence.</p>
           </div>
           <div class="welcome-images">
             <img src="${photos.boost.src}" alt="${photos.boost.alt}" class="homepage-image">
@@ -201,10 +201,10 @@ const contentMap = {
 
     steering: `
         <h2>Steering</h2>
-        ${/* photoStrip('lexus') — image removed, placeholder for future photo */''}
+        ${/* photoStrip('lexus') - image removed, placeholder for future photo */''}
         <p>Your steering system is vital to your safety and your driving experience. When it starts making unusual noises like popping and squeaking, becomes harder to turn, or leaks red or clear fluid, it's a clear sign that professional attention is needed. At Rockstar Auto Repair, we understand the importance of responsive, reliable steering, and we're here to help you maintain it.</p>
         <h5>Common Steering Problems</h5>
-        <p>Over time, power steering systems can accumulate debris, fluid contaminants, or wear and tear on components like the pump, hoses, or rack and pinion. Left unchecked, these issues can lead to costly repairs—or worse, a complete loss of steering control. Warning signs include:</p>
+        <p>Over time, power steering systems can accumulate debris, fluid contaminants, or wear and tear on components like the pump, hoses, or rack and pinion. Left unchecked, these issues can lead to costly repairs-or worse, a complete loss of steering control. Warning signs include:</p>
         <ul>
             <li>Difficulty turning the wheel</li>
             <li>Strange noises while steering</li>
@@ -215,14 +215,14 @@ const contentMap = {
         <p>Keeping your power steering system clean and well-maintained is the best way to avoid expensive failures. Our technicians recommend a full system flush at least every 50,000 miles to remove contaminants and replace degraded fluid.</p>
         <h5>Comprehensive Steering Inspections</h5>
         <p>Our expert mechanics will thoroughly inspect your steering system, including the power steering pump, steering linkages, hoses, and belts. If we find worn or damaged components, we'll recommend repairs or replacements to get your system back to peak performance.</p>
-        <p>Steering shouldn't feel like a workout — let Rockstar Auto Repair keep your system smooth, responsive, and reliable.</p>
+        <p>Steering shouldn't feel like a workout - let Rockstar Auto Repair keep your system smooth, responsive, and reliable.</p>
         `,
 
     suspension: `
         <h2>Suspension</h2>
-        <p>Your car's suspension system does more than just smooth out bumps — it's crucial for maintaining control and safety on the road. Worn-out suspension components can lead to an uncomfortable ride, reduced handling, and even longer stopping distances.</p>
+        <p>Your car's suspension system does more than just smooth out bumps - it's crucial for maintaining control and safety on the road. Worn-out suspension components can lead to an uncomfortable ride, reduced handling, and even longer stopping distances.</p>
         <h5>Signs of a Suspension Problem</h5>
-        <p>Suspension systems are made up of many components — shocks, struts, springs, and control arms — all working together to keep your vehicle stable. Common symptoms include:</p>
+        <p>Suspension systems are made up of many components - shocks, struts, springs, and control arms - all working together to keep your vehicle stable. Common symptoms include:</p>
         <ul>
             <li>Excessive bouncing or swaying after hitting bumps</li>
             <li>Difficulty steering or maintaining control</li>
@@ -233,13 +233,13 @@ const contentMap = {
         <h5>Suspension Maintenance and Repairs</h5>
         <p>Our certified technicians will perform a detailed inspection of your suspension system to identify worn or damaged components. Whether you need new shocks, struts, or bushings, we use only high-quality parts to restore your ride's comfort and handling.</p>
         <h5>Why Suspension Matters</h5>
-        <p>A healthy suspension isn't just about comfort — it's about safety. Properly functioning shocks and struts help keep your tires in contact with the road, ensuring better control and stopping power.</p>
+        <p>A healthy suspension isn't just about comfort - it's about safety. Properly functioning shocks and struts help keep your tires in contact with the road, ensuring better control and stopping power.</p>
         `,
 
     brakes: `
         <h2>Brakes and Tires</h2>
         ${photoStrip('engine_work', 'shop_floor')}
-        <p>Your vehicle's brakes play a critical role in keeping you and your family safe — and they can even save you money in the long run. Over time, brakes wear down due to friction, heat, and everyday use.</p>
+        <p>Your vehicle's brakes play a critical role in keeping you and your family safe - and they can even save you money in the long run. Over time, brakes wear down due to friction, heat, and everyday use.</p>
         <p>When your brake pads wear out, it leads to metal-on-metal contact, which can quickly damage the more expensive rotors, drums, or even the calipers. Warning signs include squealing, grinding, longer stopping distances, or fluid leaking near the wheels.</p>
         <p>While brakes keep you safe when stopping, your tires are the foundation of your vehicle's performance and safety on the road. Tires with proper tread and inflation ensure better handling, fuel efficiency, and braking distance, especially during wet or slippery conditions.</p>
         <p>At RockStar Auto Repair, we've got you covered with a comprehensive lineup of tire services. Whether you need new tires, tire repairs, rotation, balancing, or even just a quick pressure check, our expert technicians are ready to help.</p>
@@ -271,7 +271,7 @@ const contentMap = {
 
     oil: `
         <h2>Oil Lube and Filter</h2>
-        <p>Regular oil changes are the backbone of your car's health. At RockStar Auto Repair, we don't just change your oil — we provide a complete service designed to keep your vehicle running at its best.</p>
+        <p>Regular oil changes are the backbone of your car's health. At RockStar Auto Repair, we don't just change your oil - we provide a complete service designed to keep your vehicle running at its best.</p>
         <h5>Oil and Filter Replacement</h5>
         <p>We drain the old, used oil and replace it with fresh, high-quality oil, ensuring your engine runs smoothly. A high quality oil filter is used to maintain peak performance and keep contaminants at bay.</p>
         <h5>Lubrication of Fittings</h5>
@@ -299,9 +299,9 @@ const contentMap = {
         <p>A properly functioning exhaust system is essential for your vehicle's performance and environmental responsibility. At RockStar Auto Repair, we specialize in replacing damaged or worn-out exhaust systems to keep your car running clean and quiet.</p>
         <h5>Signs Your Exhaust System Needs Attention</h5>
         <ul>
-            <li>Excessive noise — loud engine sounds or rumbling may indicate a problem with your muffler or exhaust pipes</li>
-            <li>Decreased fuel efficiency — a damaged exhaust can disrupt your engine's airflow</li>
-            <li>Unpleasant odors — smelling exhaust fumes inside your vehicle is a serious safety concern</li>
+            <li>Excessive noise - loud engine sounds or rumbling may indicate a problem with your muffler or exhaust pipes</li>
+            <li>Decreased fuel efficiency - a damaged exhaust can disrupt your engine's airflow</li>
+            <li>Unpleasant odors - smelling exhaust fumes inside your vehicle is a serious safety concern</li>
             <li>Visible rust or damage to exhaust pipes or muffler</li>
         </ul>
         <p>Our team expertly removes your old, damaged exhaust components and installs high-quality replacements tailored to your vehicle's specifications, ensuring your car meets safety and performance standards.</p>
