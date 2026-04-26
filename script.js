@@ -57,38 +57,27 @@ document.addEventListener('DOMContentLoaded', function () {
             // which the click handler below will catch and navigate with.
         });
 
-        // ── Click: handles pointer devices AND the second tap on touch ───────
+        // ── Click: second tap on touch navigates; pointer devices navigate immediately ──
         trigger.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
             if (isTouchDevice()) {
-                // On touch, only reach here on the second tap (menu already open).
-                // Close the menu and navigate.
+                // Only reach here on second tap (menu already open) — navigate.
                 const menu = this.parentElement.querySelector('.dropdown-menu');
                 if (menu.classList.contains('open')) {
-                    e.preventDefault();
-                    e.stopPropagation();
                     loadContent(this.getAttribute('data-tab') || this.id);
-                    return;
+                } else {
+                    // Edge case: menu closed somehow, reopen it.
+                    closeAllDropdowns();
+                    menu.classList.add('open');
                 }
-                // If somehow the menu is not open (edge case), open it.
-                e.preventDefault();
-                e.stopPropagation();
-                closeAllDropdowns();
-                menu.classList.add('open');
                 return;
             }
 
-            // Pointer device — toggle on click (CSS hover already shows it,
-            // but a click should navigate to the top-level "Services" page).
-            e.preventDefault();
-            e.stopPropagation();
-            const menu = this.parentElement.querySelector('.dropdown-menu');
-            const isOpen = menu.classList.contains('open');
-            closeAllDropdowns();
-            if (!isOpen) {
-                menu.classList.add('open');
-            } else {
-                loadContent(this.getAttribute('data-tab') || this.id);
-            }
+            // Pointer device — CSS :hover already handles open/close.
+            // A click should simply navigate to the Services page.
+            loadContent(this.getAttribute('data-tab') || this.id);
         });
     });
 
