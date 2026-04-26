@@ -40,6 +40,8 @@ main {
 
 footer {
     flex-shrink: 0;
+    /* Prevent flex from collapsing the footer on short/mobile viewports */
+    min-height: 0;
     width: 100%;
     position: relative;
     z-index: 99999;
