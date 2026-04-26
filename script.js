@@ -36,27 +36,34 @@ document.addEventListener('DOMContentLoaded', function () {
             closeAllDropdowns();
 
             if (!isOpen) {
-                // First tap: open menu
                 menu.classList.add('open');
             } else {
-                // Second tap: navigate to Services page
                 loadContent(this.getAttribute('data-tab') || this.id);
             }
         });
     });
 
     // ── Dropdown child items ─────────────────────────────────────────────────
-    // stopPropagation so the document click handler below doesn't interfere
     document.querySelectorAll('.dropdown-menu a').forEach((item) => {
+        // touchstart fires before click — close the menu at the earliest moment
+        item.addEventListener('touchstart', function () {
+            closeAllDropdowns();
+        }, { passive: true });
+
         item.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
+            closeAllDropdowns(); // force close before anything else
             loadContent(this.getAttribute('data-tab') || this.id);
         });
     });
 
-    // ── Outside tap closes menu ──────────────────────────────────────────────
-    document.addEventListener('click', closeAllDropdowns);
+    // ── Outside tap: intentional, not global ─────────────────────────────────
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.dropdown')) {
+            closeAllDropdowns();
+        }
+    });
 
     // ── Non-dropdown nav links ───────────────────────────────────────────────
     document.querySelectorAll('nav ul li a').forEach((tab) => {
