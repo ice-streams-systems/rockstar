@@ -121,11 +121,66 @@ const contentMap = {
         `,
 
     specials: `
-        <h2>Special Offers</h2>
-        <p>Take advantage of our latest specials and promotions. Check back often for new deals!</p>
-        <ul>
-            <li>Get your snow tires installed and save $20! Happening until December 31st! We are offering winter tire change overs for $80 out the door! Don't forget that we provide complete vehicle inspections with every visit! Give us a call or text to get on our schedule! We have immediate availability!</li>
-        </ul>
+        <h2>Our Prices</h2>
+        <p>Straightforward pricing with no surprises. Questions? Give us a call at (269) 313-6918.</p>
+        <div class="price-grid">
+
+            <div class="price-card">
+                <span class="price-service">5 Quart Oil Change with Filter</span>
+                <span class="price-amount">$79.99 <span class="price-note">+ tax</span></span>
+            </div>
+
+            <div class="price-card">
+                <span class="price-service">Complete Vehicle Inspection</span>
+                <span class="price-amount">$50.00</span>
+            </div>
+
+            <div class="price-card">
+                <span class="price-service">TPMS Sensor Replacement</span>
+                <span class="price-amount">$60.25 <span class="price-note">per sensor</span></span>
+            </div>
+
+            <div class="price-card">
+                <span class="price-service">Tire Mount and Balance</span>
+                <span class="price-amount">$25.00 <span class="price-note">per tire, includes new valve stem</span></span>
+            </div>
+
+            <div class="price-card">
+                <span class="price-service">Tire Balance</span>
+                <span class="price-amount">$40.00</span>
+            </div>
+
+            <div class="price-card">
+                <span class="price-service">Tire Repair</span>
+                <span class="price-amount">$35.00</span>
+            </div>
+
+            <div class="price-card">
+                <span class="price-service">Front Brakes</span>
+                <span class="price-amount">$130.00 <span class="price-note">+ parts</span></span>
+            </div>
+
+            <div class="price-card">
+                <span class="price-service">Rear Brakes</span>
+                <span class="price-amount">$169.00 <span class="price-note">+ parts</span></span>
+            </div>
+
+            <div class="price-card">
+                <span class="price-service">Coolant Exchange</span>
+                <span class="price-amount">$140.00</span>
+            </div>
+
+            <div class="price-card">
+                <span class="price-service">Alignment <span class="price-note">(drop off only)</span></span>
+                <span class="price-amount">$130.00</span>
+            </div>
+
+            <div class="price-card">
+                <span class="price-service">Differential Service</span>
+                <span class="price-amount">$130.00</span>
+            </div>
+
+        </div>
         `,
 
     reviews: `
