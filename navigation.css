@@ -66,12 +66,29 @@ nav ul li a.active {
     box-shadow: 0 12px 32px rgba(0,0,0,0.7);
 }
 
-/* Desktop: open on hover */
-.dropdown:hover .dropdown-menu {
-    display: block;
+/* Desktop only — hover devices get CSS-driven open */
+@media (hover: hover) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* Gap bridge so menu stays open as mouse travels down */
+    .dropdown::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 8px;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown-menu:hover {
+        display: block;
+    }
 }
 
-/* Mobile: open via JS .open class (hover not reliable on touch) */
+/* Mobile — JS toggles this class, hover rule above never fires */
 .dropdown-menu.open {
     display: block;
 }
@@ -106,28 +123,9 @@ nav ul li a.active {
         font-size: clamp(0.75rem, 3vw, 1rem);
     }
 
-    /* Chevron on the dropdown trigger so users know it opens a menu */
     .dropdown > a::after {
         content: ' ▾';
         font-size: 0.7em;
         opacity: 0.7;
     }
-}
-
-/* ── Dropdown gap bridge ── */
-/* Invisible pseudo-element fills the gap between button and menu
-   so hover state doesn't drop when mouse travels between them */
-.dropdown::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 8px;
-}
-
-/* Also keep menu open when hovering the bridge */
-.dropdown:hover .dropdown-menu,
-.dropdown-menu:hover {
-  display: block;
 }
