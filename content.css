@@ -252,10 +252,56 @@
     box-shadow: 0 6px 24px rgba(193,74,9,0.25);
 }
 
-.review-card iframe {
-    flex: 1;
-    width: 100% !important;
-    min-height: 180px;
-    border: none;
-    display: block;
+
+/* ── Price Grid (Specials page) ── */
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: clamp(10px, 1.5vw, 20px);
+    width: 100%;
+    margin-top: clamp(12px, 2vh, 24px);
+}
+
+.price-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: clamp(12px, 1.5vh, 20px) clamp(14px, 1.5vw, 22px);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(193,74,9,0.25);
+    border-left: 3px solid #C14A09;
+    border-radius: 4px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.price-card:hover {
+    background: rgba(193,74,9,0.05);
+    border-color: rgba(193,74,9,0.55);
+    box-shadow: 0 4px 20px rgba(193,74,9,0.15);
+}
+
+.price-service {
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(0.78rem, 1vw, 0.95rem);
+    color: #E8E8E8;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+.price-amount {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    font-weight: 700;
+    color: #09A688;
+    letter-spacing: 0.01em;
+}
+
+.price-note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.68rem, 0.85vw, 0.82rem);
+    font-weight: 400;
+    color: rgba(232,232,232,0.5);
+    letter-spacing: 0.02em;
+    text-transform: none;
 }
