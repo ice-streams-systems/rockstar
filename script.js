@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const dynamicContent = document.getElementById('dynamic-content');
 
     const closeAllDropdowns = () => {
-        document.querySelectorAll('.dropdown-menu.open').forEach(menu => {
-            menu.classList.remove('open');
-        });
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
     };
 
     const loadContent = (tabName) => {
+        closeAllDropdowns();
+
         const html = contentMap[tabName] || '<h2>Page not found!</h2>';
         dynamicContent.innerHTML = html;
 
@@ -15,63 +15,50 @@ document.addEventListener('DOMContentLoaded', function () {
         dynamicContent.offsetHeight;
         dynamicContent.style.animation = '';
 
-        if (tabName === 'homepage') {
-            dynamicContent.classList.add('no-scroll');
-        } else {
-            dynamicContent.classList.remove('no-scroll');
-        }
-
+        dynamicContent.classList.toggle('no-scroll', tabName === 'homepage');
         dynamicContent.scrollTop = 0;
         setTimeout(() => { dynamicContent.scrollTop = 0; }, 120);
-
-        // Close menu AFTER content is in the DOM
-        closeAllDropdowns();
 
         document.querySelectorAll('nav ul li a').forEach(t => t.classList.remove('active'));
         const active = document.querySelector(`nav ul li a[data-tab="${tabName}"], nav ul li a#${tabName}`);
         if (active) active.classList.add('active');
     };
 
-    // ── Dropdown (touch-aware) ───────────────────────────────────────────────
-    const isTouchDevice = () => window.matchMedia('(hover: none)').matches;
-
+    // ── Dropdown trigger ("Services") ───────────────────────────────────────
     document.querySelectorAll('.dropdown > a').forEach((trigger) => {
         trigger.addEventListener('click', function (e) {
-            if (!isTouchDevice()) return;
-
             e.preventDefault();
-            const menu = this.parentElement.querySelector('.dropdown-menu');
-            if (!menu) return;
+            e.stopPropagation();
 
-            if (menu.classList.contains('open')) {
-                // Second tap on trigger: close menu AND navigate to its page
-                closeAllDropdowns();
-                loadContent(this.getAttribute('data-tab') || this.id);
-            } else {
-                // First tap: just open the menu
-                closeAllDropdowns();
+            const menu = this.parentElement.querySelector('.dropdown-menu');
+            const isOpen = menu.classList.contains('open');
+
+            closeAllDropdowns();
+
+            if (!isOpen) {
+                // First tap: open menu
                 menu.classList.add('open');
+            } else {
+                // Second tap: navigate to Services page
+                loadContent(this.getAttribute('data-tab') || this.id);
             }
         });
     });
 
-    // Child items: navigate, loadContent() closes the menu
+    // ── Dropdown child items ─────────────────────────────────────────────────
+    // stopPropagation so the document click handler below doesn't interfere
     document.querySelectorAll('.dropdown-menu a').forEach((item) => {
         item.addEventListener('click', function (e) {
             e.preventDefault();
+            e.stopPropagation();
             loadContent(this.getAttribute('data-tab') || this.id);
         });
     });
 
-    // Outside tap: safety net
-    document.addEventListener('click', function (e) {
-        if (!e.target.closest('.dropdown')) {
-            closeAllDropdowns();
-        }
-    });
-    // ────────────────────────────────────────────────────────────────────────
+    // ── Outside tap closes menu ──────────────────────────────────────────────
+    document.addEventListener('click', closeAllDropdowns);
 
-    // Non-dropdown nav links
+    // ── Non-dropdown nav links ───────────────────────────────────────────────
     document.querySelectorAll('nav ul li a').forEach((tab) => {
         if (tab.closest('.dropdown')) return;
         tab.addEventListener('click', function (e) {
@@ -80,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Logo
+    // ── Logo ─────────────────────────────────────────────────────────────────
     document.querySelector('a.logo').addEventListener('click', function (e) {
         e.preventDefault();
         loadContent('homepage');
