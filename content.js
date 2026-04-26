@@ -1,4 +1,4 @@
-// ── Photo bank ──
+// - Photo bank -
 // All available shop photos. Add new ones here as they come in.
 const photos = {
     shop_floor:   { src: './images/Hoods_Up_Shop.jpg', alt: 'Rockstar Auto Repair shop floor' },
@@ -9,7 +9,7 @@ const photos = {
     mech:         { src: './images/Mech.jpg',          alt: 'Mechanic at work' },
 };
 
-// ── Helper: renders a photo strip for service pages ──
+// - Helper: renders a photo strip for service pages -
 function photoStrip(...keys) {
     const imgs = keys.map(k =>
         `<img src="${photos[k].src}" alt="${photos[k].alt}" class="service-photo">`
