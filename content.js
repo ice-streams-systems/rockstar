@@ -63,8 +63,16 @@ const contentMap = {
               <input type="email" id="req-email" name="email" required>
             </div>
             <div class="field">
-              <label for="req-car">Vehicle Make / Model / Year</label>
-              <input type="text" id="req-car" name="car" required>
+              <label for="req-year">Year</label>
+              <input type="text" id="req-year" name="year" placeholder="e.g. 2018" maxlength="4" required>
+            </div>
+            <div class="field">
+              <label for="req-make">Make</label>
+              <input type="text" id="req-make" name="make" placeholder="e.g. Ford" required>
+            </div>
+            <div class="field full">
+              <label for="req-model">Model</label>
+              <input type="text" id="req-model" name="model" placeholder="e.g. F-150" required>
             </div>
             <div class="field full">
               <label for="req-service">Service Required</label>
@@ -92,8 +100,16 @@ const contentMap = {
               <input type="email" id="est-email" name="email" required>
             </div>
             <div class="field">
-              <label for="est-car">Vehicle Make / Model / Year</label>
-              <input type="text" id="est-car" name="car" required>
+              <label for="est-year">Year</label>
+              <input type="text" id="est-year" name="year" placeholder="e.g. 2018" maxlength="4" required>
+            </div>
+            <div class="field">
+              <label for="est-make">Make</label>
+              <input type="text" id="est-make" name="make" placeholder="e.g. Ford" required>
+            </div>
+            <div class="field full">
+              <label for="est-model">Model</label>
+              <input type="text" id="est-model" name="model" placeholder="e.g. F-150" required>
             </div>
             <div class="field full">
               <label for="est-service">Work Needed</label>
