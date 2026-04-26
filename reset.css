@@ -14,7 +14,12 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    /* dvh accounts for mobile browser chrome (address bar shrink/grow).
+       100vh on mobile is taller than the actual visible area, which pushes
+       the footer off-screen. 100dvh tracks the real available height.
+       Falls back to 100vh for browsers that don't support dvh yet. */
     height: 100vh;
+    height: 100dvh;
     background-color: #080808;
     font-family: 'DM Sans', sans-serif;
     font-size: clamp(0.8rem, 1.1vw, 1rem);
