@@ -38,18 +38,19 @@
 
 /* ── Typography ── */
 /* Page title (one per page - was h2 in the old single-page markup, now the
-   real h1 since each page is now its own document). Blue, distinct from the
-   orange h2/h5 sub-headers used inside the copy. */
+   real h1 since each page is now its own document). Teal, matching the
+   site's existing accent color, distinct from the orange h2/h5 sub-headers
+   used inside the copy. */
 #dynamic-content h1 {
     font-family: 'Russo One', sans-serif;
     font-size: clamp(1.4rem, 2.8vw, 2.4rem);
-    color: #0952C1;
+    color: #09A688;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    border-bottom: 2px solid rgba(9,82,193,0.4);
+    border-bottom: 2px solid rgba(9,166,136,0.4);
     padding-bottom: 6px;
     margin-bottom: clamp(10px, 2vh, 28px);
-    text-shadow: 0 0 30px rgba(9,82,193,0.3);
+    text-shadow: 0 0 30px rgba(9,166,136,0.3);
     position: relative;
 }
 
@@ -60,7 +61,7 @@
     left: 0;
     width: clamp(40px, 6vw, 80px);
     height: 2px;
-    background: #09A688;
+    background: #C14A09;
 }
 
 #dynamic-content h2 {
