@@ -1,0 +1,95 @@
+/* ── Forms ── */
+
+/* Centering wrapper injected around forms via content.css */
+.form-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.form-page h2 {
+    text-align: center;
+    width: 100%;
+    max-width: 560px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(5px, 0.7vh, 10px) clamp(8px, 1vw, 16px);
+    width: 100%;
+    max-width: 560px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Full-width fields */
+form .full {
+    grid-column: 1 / -1;
+}
+
+form label {
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(0.58rem, 0.8vw, 0.8rem);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #09A688;
+    display: block;
+    margin-bottom: 2px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: clamp(5px, 0.7vh, 9px) 10px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(193,74,9,0.3);
+    border-radius: 3px;
+    color: #E8E8E8;
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.75rem, 0.95vw, 0.92rem);
+    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #C14A09;
+    background: rgba(193,74,9,0.06);
+    box-shadow: 0 0 0 2px rgba(193,74,9,0.15);
+}
+
+form textarea {
+    height: clamp(60px, 8vh, 100px);
+    resize: none;
+}
+
+form .field {
+    display: flex;
+    flex-direction: column;
+}
+
+form button {
+    grid-column: 1 / -1;
+    padding: clamp(8px, 1vh, 12px) 24px;
+    background: #C14A09;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+    justify-self: center;
+    width: 100%;
+}
+
+form button:hover {
+    background: #a13707;
+    box-shadow: 0 4px 20px rgba(193,74,9,0.5);
+    transform: translateY(-1px);
+}
