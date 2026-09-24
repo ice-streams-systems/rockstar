@@ -1,0 +1,100 @@
+/* ── Logo Box ── */
+.logo-box {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    padding: 0 clamp(4px, 1vw, 16px);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 12px rgba(193,74,9,0.6));
+}
+
+.logo h1 {
+    font-size: clamp(2.4rem, 7.5vw, 9rem);
+    line-height: 1.0;
+    color: #C14A09;
+    font-family: 'Averia Serif Libre', serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 20px rgba(193,74,9,0.4), 0 0 60px rgba(193,74,9,0.15);
+    white-space: nowrap;
+}
+
+.logo h2 {
+    font-size: clamp(1rem, 2.8vw, 3.5rem);
+    color: #09A688;
+    font-family: 'Averia Serif Libre', serif;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: clamp(-1rem, -1.8vw, -3.2rem);
+    text-indent: clamp(3.5rem, 9vw, 17rem);
+    text-shadow: 0 0 20px rgba(9,166,136,0.35);
+    white-space: nowrap;
+}
+
+/* ── Contact Box ── */
+.contact-box {
+    flex: 0 0 auto;
+    color: #E8E8E8;
+    padding: clamp(8px, 1vh, 16px) clamp(10px, 1.2vw, 20px);
+    background: rgba(13,13,13,0.85);
+    border: 1px solid #C14A09;
+    border-left: 3px solid #C14A09;
+    border-radius: 4px;
+    line-height: 1.6;
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.65rem, 0.9vw, 0.95rem);
+    backdrop-filter: blur(4px);
+}
+
+.contact-box strong {
+    color: #C14A09;
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(0.7rem, 0.95vw, 1rem);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.contact-box p {
+    margin: 2px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.contact-box i {
+    color: #09A688;
+    width: 14px;
+    flex-shrink: 0;
+}
+
+/* ── Map ── */
+.map-box {
+    flex: 0 0 auto;
+}
+
+.map iframe {
+    display: block;
+    width: clamp(180px, 26vw, 420px);
+    height: clamp(100px, 15vw, 230px);
+    border: 0;
+    border-radius: 4px;
+    border: 1px solid rgba(193,74,9,0.4);
+    filter: grayscale(30%) contrast(1.05);
+}
